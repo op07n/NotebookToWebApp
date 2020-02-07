@@ -4,4 +4,4 @@ Takes 1 Argument: Name  of ipynb. To stop, CTRL-C in Terminal or Stop Button in 
 "
 jupyter nbconvert   --to script $1.ipynb
 awk '!/ipython/' $1.py >  temp.py && mv temp.py app.py && rm $1.py
-streamlit run app.py
+streamlit run app.py --browser.gatherUsageStats false --server.enableCORS false
